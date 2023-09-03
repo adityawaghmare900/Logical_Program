@@ -1,17 +1,25 @@
-﻿namespace LogicalProgam
+﻿using System.Diagnostics.CodeAnalysis;
+using System.Transactions;
+
+namespace LogicalProgam
 {
     internal class Program
     {
         static void Main(string[] args)
         {
-            int a=0; int b=1;
-            Console.Write(a+" "+ b+" "); 
-            for(int i=0;i<10;i++)
+            int sum = 0;
+            Console.Write("Enter the number: ");
+            int a=Convert.ToInt16(Console.ReadLine());
+            for(int  i = 1; i < a; i++)
             {
-                int c = a + b;
-                Console.Write(c+" ");
-                a = b;
-                b=c;
+                if(a%i == 0)
+                {
+                    sum = sum + i;  
+                }
+            }
+            if(sum==a)
+            {
+                Console.WriteLine("Given number is Perfect Number");
             }
         }
     }
