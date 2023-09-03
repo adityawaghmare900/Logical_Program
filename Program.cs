@@ -7,24 +7,14 @@ namespace LogicalProgam
     {
         static void Main(string[] args)
         {
-            int cnt = 0;
-            Console.Write("Enter the number: ");
-            int a = Convert.ToInt16(Console.ReadLine());
-            for (int i = 1; i <= a; i++)
+            String revString="";
+            Console.Write("Enter the name: ");
+            String str = Convert.ToString(Console.ReadLine());
+            for(int i=0;i<str.Length;i++)
             {
-                if (a % i == 0)
-                {
-                    cnt++;
-                }
+                revString = str[i] + revString;
             }
-            if (cnt == 2)
-            {
-                Console.WriteLine("Given number is Prime");
-            }
-            else
-            {
-                Console.WriteLine("Given number is not Prime");
-            }
+            Console.WriteLine(revString);
         }
     }
 }
