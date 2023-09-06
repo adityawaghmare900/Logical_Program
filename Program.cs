@@ -1,4 +1,5 @@
-﻿using System.Diagnostics.CodeAnalysis;
+﻿using System.Diagnostics;
+using System.Diagnostics.CodeAnalysis;
 using System.IO.Compression;
 using System.Transactions;
 
@@ -8,16 +9,14 @@ namespace LogicalProgam
     {
         static void Main(string[] args)
         {
-            var chars = "abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTWXYZ012345689";
-            var strchar = new char[5];
-            var random=new Random();
-
-            for(int i = 0; i < strchar.Length; i++)
+            Stopwatch stopwatch = new Stopwatch();
+            stopwatch.Start();
+            for(int i= 0; i <= 5000 ; i++) 
             {
-                strchar[i]=chars[random.Next(chars.Length)];
+                Console.WriteLine(i);
             }
-            var genRandNum=new String(strchar);
-            Console.WriteLine(genRandNum);
+            stopwatch.Stop();
+            Console.WriteLine("time elasped: "+ stopwatch.Elapsed); 
         }
     }
 }
